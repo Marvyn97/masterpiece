@@ -1,19 +1,33 @@
 class Disk {
-    constructor(canvas, ctx, color, radius){
+    constructor(canvas, ctx){
         this.canvas = canvas;
         this.ctx = ctx;
-        this.color = color;
-        this.radius = radius;
+        this.color = "red";
+        this.radius = 10;
         this.position = {
-            X: 50,
-            y: 100,
+            x: 0,
+            y: 0,
         }
     }
 
-    draw() {
-        this.ctx.beginPath();
-        this.ctx.arc(100, 75, 50, 0, 2 * Math.PI);
-        this.ctx.stroke()
+    set newPosition(position){
+        this.position = position;
+    }
+
+    set newColor(color){
+        this.color = color
+    }
+
+    set newRadius(radius){
+        this.radius = radius;
+    }
+
+    draw(ctx) {
+
+        ctx.fillStyle = this.color;
+        ctx.beginPath();
+        ctx.arc(this.position.x, this.position.y, this.radius, 0, 2 * Math.PI);
+        ctx.fill();
     }
     // création du constructor, définition des propriété avec valeur par defaut
         // color, radius, position x & y
