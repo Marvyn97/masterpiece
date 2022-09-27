@@ -2,7 +2,7 @@
 let myCanvas = document.getElementById("canvas");
 let ctx = myCanvas.getContext("2d");
 
-console.log(ctx);
+//console.log(ctx);
 
 // fonction getMouseLocation(e) qui va retourner la position de la souris
 function getMouseLocation(e) {
